@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
     joinedGroups: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Group' }] 
 });
 
-// Model Creation
+
 const Turf = mongoose.model("Turf", turfSchema);
 const Group = mongoose.model("Group", groupSchema);
 const Academy = mongoose.model("Academy", academySchema);
