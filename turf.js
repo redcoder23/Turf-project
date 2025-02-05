@@ -27,7 +27,7 @@ app.put('/turfs/:name', async (req, res) => {
 app.post('/turfs', async (req, res) => {
     try {
         const newturf = new Turf({
-            name: req.body.name,  // Corrected from res.body to req.body
+            name: req.body.name,  
             address: req.body.address,
             isOpen: req.body.isOpen,
             timings: req.body.timings,
