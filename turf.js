@@ -6,51 +6,6 @@ const { Turf, Group, Academy, Sport, History, User }
 
 app.use(express.json());
 
-//put -> only one   
-// insert one ,insert many
-// delete one,delete many 
-
-//  change the timings of a certain model ->  
-
-// put by id
-// app.put('/turfs/:name', async (req, res) => {
-//     try {
-//         /*  
-//             const nm=req.params;  
-//          req.params would give an object with a single property:
-//               {
-//            name: "MyTurfName"
-//            }
-//         */
-//         /* 
-//              const nm=req.params.name; 
-//         */
-//         const upd = await Turf.findOne({ name: req.params.name });
-//         if (!upd) {
-//             return res.status(500).json({ error: "turf not found" });
-//         }
-
-//         const id = upd._id;
-//         const upd2 = await Turf.findByIdAndUpdate
-//             (
-//                 id,
-//                 { $set: req.body },
-//                 {
-//                     new: true
-//                 }
-//             );   
-//             res.json(upd2);  
-//     }
-//     catch (error) {
-//         res.status(500).json({ error: 'Couldnt find the turf' });
-//     }
-// });   
-
-//put 
-//   /* 
-//                          TRY AND USE MIDDLE WARE ,TRY TO USE THE GENERAL APPROACH 
-//
-//  * /
 app.put('/turfs/:name', async (req, res) => {
     try {
         const up = await Turf.findOneAndUpdate(
