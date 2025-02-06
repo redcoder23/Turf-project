@@ -8,6 +8,9 @@ app.use(express.json());
 
 app.put('/turfs/:name', async (req, res) => {
     try {
+        if (Object.keys(req.body).length === 0) {
+  return res.status(400).json({ error: 'No fields provided for update' });
+}
         const up = await Turf.findOneAndUpdate(
             { name: req.params.name },   // Find by name
             { $set: req.body },          // Update with body data
@@ -72,3 +75,4 @@ app.get('/turfs/:name', async (req, res) => {
         res.status(500).json({ error: 'Could not find the turf' });
     }
 });
+module.export=app;
